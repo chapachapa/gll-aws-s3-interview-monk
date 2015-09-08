@@ -1,0 +1,11 @@
+div.fileGetButton{
+    background-color: #00d6b2;
+    color: teal;
+    transition: all 300ms ease;
+}
+
+div.fileGetButton:hover{
+    background-color: #0b97c4;
+    color:white;
+    cursor: pointer;
+}

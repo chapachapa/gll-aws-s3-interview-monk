@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="listApp">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="css/list.css">
+</head>
+<body>
+    <div ng-controller="mainController">
+        <ul id="downloadList">
+            <li ng-repeat="interviewee in intervieweeList">
+                <ul class="userContainer">
+                    <li>{{interviewee.name}}</li>
+                    <li>{{interviewee.email}}</li>
+                    <li>
+                        <div ng-repeat="file in interviewee.responses">
+                            {{file.uuid}}
+                            <div class="fileGetButton" ng-click="loadFile(file.uuid)">Get File</div>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</body>
+<script src="bower_components/angular/angular.js"></script>
+<script src="js/list.js"></script>
+</html>

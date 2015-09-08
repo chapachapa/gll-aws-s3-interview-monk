@@ -1,0 +1,28 @@
+#recControl{
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#recControl>li{
+    padding: 0.25em;
+    margin: 0.35em;
+}
+
+.actionButton{
+    background-color: #00d6b2;
+    color: teal;
+    transition: all 300ms ease;
+}
+
+.actionButton:hover{
+    background-color: #0b97c4;
+    color:white;
+    cursor: pointer;
+}
+
+.disabledButton{
+    background-color: lightgray;
+    color: gray;
+}
