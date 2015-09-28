@@ -113,7 +113,7 @@ router.get('/aws/request', function (req, res) {
     console.log(reqBatch);
     //createBucket(id);         // NOTE: we are not using different buckets, we'll put all in the same bucket
     getSignedURL('gll-interviewmonk', id, 'putObject');
-    mongoHelper.newInterviewee('Charles Park', 'chapa@chapa.kr', [{uuid: id}, {uuid: id}, {uuid: id}]);
+    mongoHelper.newInterviewee('Charles Park', 'chapa@chapa.kr', [{uuid: id}]);
     res.status(202).json({message: 'Accepted. Attempting to request AWS for signed URL', id: id});
 });
 

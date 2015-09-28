@@ -1,13 +1,10 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="InterviewMonk">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Online Screening for GoLiveLabs</title>
+    <link rel="stylesheet" type="text/css" href="css/record.css"/>
     <link rel="stylesheet" type="text/css" href="css/intMonkBase.css"/>
-    <script src="bower_components/angular/angular.js"></script>
-    <script src="msr/MediaStreamRecorder.js"></script>
-    <script src="js/mediaUpload.js"></script>
-    <script src="js/mediaRec.js"></script>
 </head>
 <body>
 
@@ -38,11 +35,16 @@
         </small>
     </h1>
     <ol class="questions-container">
-        <li ng-repeat="obj in interview" class="ng-scope">
+        <li class="ng-scope">
             <div class="question ng-binding">What is prototypal inheritance (JS)? Explain?</div>
-            <textarea class="answer ng-pristine ng-untouched ng-valid" ng-model="obj.answer" id="" cols="30" rows="10"></textarea>
-        </li><!-- end ngRepeat: obj in interview -->
-        <li>
+            <ul id="recControl">
+                <li id="recRecord" class="actionButton">Record</li>
+                <li id="recStop" class="disabledButton">Stop</li>
+                <li id="recView" class="disabledButton">View File</li>
+                <!--<li id= "recUpload" class="disabledButton">Upload</li>-->
+            </ul>
+        </li>
+        <!--<li>
             <small>Your LinkedIn URL</small>
             <input class="linkedin" type="text" placeholder="linkedin url here ... ">
         </li>
@@ -55,14 +57,19 @@
             <input class="linkedin" type="text" placeholder="work / demo link 1">
             <input class="linkedin" type="text" placeholder="work / demo link 1">
             <input class="linkedin" type="text" placeholder="work / demo link 1">
-        </li>
+        </li>-->
     </ol>
     <br>
     <div class="submit">
         <small>Please review all answers prior to submission. Please refer to your token number for any issues after submission. </small>
     </div>
-    <button class="final">Submit Answers</button>
+    <button id="finalSubmit" class="final">Submit Answers</button>
 </section>
+
+<!--<script src="bower_components/angular/angular.js"></script>-->
+<script src="msr/MediaStreamRecorder.js"></script>
+<script src="js/mediaUpload.js"></script>
+<script src="js/mediaRec_new.js"></script>
 
 </body>
 </html>

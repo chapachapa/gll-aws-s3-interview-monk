@@ -2,12 +2,28 @@
 <html lang="en" ng-app="listApp">
 <head>
     <meta charset="UTF-8">
-    <title></title>
+    <title>View Interview Responses</title>
+    <link rel="stylesheet" type="text/css" href="css/intMonkBase.css">
     <link rel="stylesheet" type="text/css" href="css/list.css">
 </head>
 <body>
+<header>
+    <div class="brand">
+        <h1>Go-LiveLabs <small>Prelims Portal</small></h1>
+    </div>
+</header>
+
+<section class="prelim-screen">
     <div ng-controller="mainController">
         <ul id="downloadList">
+            <li>
+                <ul class="userContainer categoryContainer">
+                    <li>Name</li>
+                    <li>Email</li>
+                    <li>ID</li>
+                    <li>Uploaded Videos</li>
+                </ul>
+            </li>
             <li ng-repeat="interviewee in intervieweeList">
                 <ul class="userContainer">
                     <li>{{interviewee.name}}</li>
@@ -15,13 +31,16 @@
                     <li>
                         <div ng-repeat="file in interviewee.responses">
                             {{file.uuid}}
-                            <div class="fileGetButton" ng-click="loadFile(file.uuid)">Get File</div>
                         </div>
+                    </li>
+                    <li>
+                        <div class="fileGetButton" ng-click="loadFile(file.uuid)">View Response</div>
                     </li>
                 </ul>
             </li>
         </ul>
     </div>
+</section>
 </body>
 <script src="bower_components/angular/angular.js"></script>
 <script src="js/list.js"></script>

@@ -12,7 +12,7 @@ var btn_stop = document.getElementById('recStop');
 var btn_view = document.getElementById('recView');
 var videoURL = '';
 var videoBlob;
-var btn_upload = document.getElementById('recUpload');
+var btn_upload = document.getElementById('finalSubmit');
 
 function onMediaSuccess(stream) {
     var mediaRecorder = new MultiStreamRecorder(stream);
@@ -36,7 +36,7 @@ function onMediaSuccess(stream) {
     btn_stop.addEventListener('click', function(){
         disableButton(btn_stop);
         enableButton(btn_view);
-        enableButton(btn_upload);
+        enableButton(btn_upload, 'final');
         mediaRecorder.stop();
     });
     btn_view.addEventListener('click', function(){
@@ -54,8 +54,8 @@ function onMediaError(e) {
     console.error('media error', e);
 }
 
-function enableButton(element){
-    element.className = 'actionButton';
+function enableButton(element, add){
+    element.className = 'actionButton' + ' '+add;
 }
 function disableButton(element){
     element.className = 'disabledButton';
